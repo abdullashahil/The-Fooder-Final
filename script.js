@@ -136,10 +136,10 @@ seachbutton.addEventListener('click', () => {
 
 // FETCHING AND GENERATING RANDOM MEALS
 
-function generateRandomMeal(data) {
-    const allIngredientss = [];
+// ...
 
-    const randomImageBox = document.querySelector('.recommended-img-div')
+function generateRandomMeal(data) {
+    const randomImageBox = document.querySelector('.recommended-img-div');
 
     data.meals.forEach(element => {
         randomMealText.innerHTML = `${element.strMeal}`
@@ -148,18 +148,7 @@ function generateRandomMeal(data) {
         modalImage.style.backgroundImage = `url(${element.strMealThumb})`
         modalTitle.innerHTML = `${element.strMeal}`
 
-
-        // for (let i = 1; i <= 20; i++) {
-        //     const ingredient = element[`strIngredient${i}`];
-        //     const measure = element[`strMeasure${i}`];
-        //     if (ingredient && measure) {
-        //         allIngredientss.push(`<li>${measure} ${ingredient}</li>`);
-        //     }
-        // }
-        // ingredientList.innerHTML = allIngredientss
-
-
-        var output = ''
+        var output = '';
         for (let i = 1; i <= 20; i++) {
             const ingredient = element[`strIngredient${i}`];
             const measure = element[`strMeasure${i}`];
@@ -169,22 +158,34 @@ function generateRandomMeal(data) {
         }
         ingredientList.innerHTML = output
 
-
     });
-    console.log(allIngredientss)
-
 }
 
-
 fetch(api_random)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
+    .then(response => response.json())
+    .then(data => {
         console.log('data:', data)
         generateRandomMeal(data)
     })
 
+// ...
+
+viewIngredients.forEach(function (viewIngredient) {
+    viewIngredient.addEventListener('click', () => {
+        modalContainer.classList.add('show');
+        main.style.filter = 'blur(3px)'
+        nav.style.filter = 'blur(3px)'
+        logobox.style.filter = 'blur(3px)'
+        footer.style.filter = 'blur(3px)'
+
+        // Move these lines here to update modal content on viewIngredients click
+        randomMealText.innerHTML = modalTitle.innerHTML;
+        modalImage.style.backgroundImage = randomImageBox.style.backgroundImage;
+        ingredientList.innerHTML = output;
+    });
+});
+
+// ...
 
 
 
