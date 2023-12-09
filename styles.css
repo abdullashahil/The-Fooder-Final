@@ -468,13 +468,13 @@ height: 6vh;
     
     .recommended-meal {
         position: relative;
-        right: 10.5%;
+        right: 18.4%;
         box-shadow: 0px 0px 20px rgb(238, 238, 238);
         border: 1px solid rgb(216, 216, 216);
         border-radius: 13px;
         min-height: 200px;
         max-height: auto;
-        width: 50%;
+        width: 18em;
 
     }
 
@@ -483,22 +483,21 @@ height: 6vh;
         box-shadow: 0px 0px 20px rgb(238, 238, 238);
         border: 1px solid rgb(216, 216, 216);
         border-radius: 13px;
-        height: 20em;
-        /* min-height: 30px;
-        /* max-height: auto; */
-       width: 12em;
+        height: 15em;
+       width: 18em;
     }
 
     .results {
-        margin-left: 7%;
+        margin-left: 17%;
         display: grid;
-        grid-template-columns: repeat(2, 20%);
-        grid-template-rows: repeat(6, 15%);
-        /* row-gap: 1%; */
-        column-gap: 40%;
+        grid-template-columns: repeat(1, 20%);
+        grid-template-rows: repeat(12, 8%);
         width: fit-content;
-        height: fit-content;
         display: none;
+    }
+
+    footer{
+        margin-top: 50%;
     }
     
     .recommended-img-div {
