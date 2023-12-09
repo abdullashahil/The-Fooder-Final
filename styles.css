@@ -265,6 +265,7 @@ footer {
 
 
 .modal-container{
+    z-index: 1;
     opacity: 0;
     pointer-events: none;
     display: flex;
@@ -364,7 +365,7 @@ footer {
 
 @media (max-width: 550px){
     body{
-        background-image: url('/assets/fooder\ mobile\ background-02.png');
+        background-image: url('/assets/fooder\ web\ background-02.png');
         background-size: 100%
     }
     .hamburger{
@@ -395,7 +396,7 @@ footer {
     }
 
     .nav-text {
-        z-index: 2;
+        z-index: 1;
         background-color: #EA492E;
         /* border: 1px solid black; */
         /* position: absolute; */
@@ -467,13 +468,13 @@ height: 6vh;
     
     .recommended-meal {
         position: relative;
-        right: 5.5%;
+        right: 10.5%;
         box-shadow: 0px 0px 20px rgb(238, 238, 238);
         border: 1px solid rgb(216, 216, 216);
         border-radius: 13px;
-        min-height: 90px;
+        min-height: 200px;
         max-height: auto;
-        width: 38%;
+        width: 50%;
 
     }
 
@@ -489,7 +490,7 @@ height: 6vh;
     }
 
     .results {
-        margin-left: 11%;
+        margin-left: 7%;
         display: grid;
         grid-template-columns: repeat(2, 20%);
         grid-template-rows: repeat(6, 15%);
@@ -532,12 +533,18 @@ height: 6vh;
         cursor: pointer;
     }
 
+    .head-text {
+        z-index: 0;
+
+    }
+
     .page-head {
         margin-top: 1%;
         /* border: 1px solid red; */
     }
     
     .head-text {
+        z-index: 0;
         margin-bottom: -15px;
         font-size: 4.5em;
         font-family: 'inika';
@@ -560,6 +567,7 @@ height: 6vh;
 /* modal////////// */
 
 .modal-container{
+    z-index: 1;
     opacity: 0;
     pointer-events: none;
     display: flex;
@@ -587,7 +595,7 @@ height: 6vh;
     max-width: 100%;
     /* display: none; */
     padding: 20px 10px;
-    width: 1200px;
+    width: 85vw;
     height: 460px;
     background-color: white;
     box-shadow: 0px 0px 10px rgb(211, 211, 211);
@@ -597,7 +605,7 @@ height: 6vh;
 
 .ingredients {
     font-family: 'poppins', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #4B4B4B;
@@ -607,7 +615,7 @@ height: 6vh;
 }
 
 .modal-title {
-    font-size: 27px;
+    font-size: 25px;
     margin-left: 43px;
     letter-spacing: 1px;
 
@@ -615,8 +623,8 @@ height: 6vh;
 
 .modal-img {
     /* border: 1px solid blue; */
-    height: 350px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
     margin-left: 40px;
     margin-bottom: 30px;
     border-radius: 12px;
@@ -626,6 +634,7 @@ height: 6vh;
 
 .modal-content{
     display: flex;
+    flex-direction: column;
     /* border: 1px solid #e21818; */
 }
 
@@ -636,6 +645,23 @@ height: 6vh;
     height: fit-content;
     /* border: 1px solid rgb(233, 27, 174); */
 }
-    
-    
+
+.close{
+    margin-right: 40px;
+    height: 16px;
+}
+
+.close:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.ingredient-list{
+    overflow-y: scroll;
+    margin-left: 15px;
+    font-family: 'poppins', sans-serif;
+    color: #4B4B4B;
+    font-size: 18px;
+}
+
 }
